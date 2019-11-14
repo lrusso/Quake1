@@ -93,8 +93,6 @@ COM.CheckRegistered = function()
 	if (h == null)
 	{
 		Con.Print('Playing shareware version.\n');
-		if (COM.modified === true)
-			Sys.Error('You must have the registered version to use modified games');
 		return;
 	}
 	var check = new Uint8Array(h);
