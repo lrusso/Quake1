@@ -204,8 +204,6 @@ M.SinglePlayer_Key = function(k)
 		case 0:
 			if (SV.server.active === true)
 			{
-				if (confirm('Are you sure you want to start a new game?') !== true)
-					return;
 				Cmd.text += 'disconnect\n';
 			}
 			Key.dest.value = Key.dest.game;
