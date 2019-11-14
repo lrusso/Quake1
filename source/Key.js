@@ -373,8 +373,6 @@ Key.Event = function(key, down)
 	{
 		if ((key !== Key.k.backspace) && (key !== Key.k.pause) && (Key.down[key] === true))
 			return;
-		if ((key >= 200) && (Key.bindings[key] == null))
-			Con.Print(Key.KeynumToString(key) + ' is unbound, hit F4 to set.\n');
 	}
 	Key.down[key] = down;
 
