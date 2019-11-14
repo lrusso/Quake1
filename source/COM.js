@@ -182,7 +182,7 @@ COM.Path_f = function()
 	{
 		s = COM.searchpaths[i];
 		for (j = s.pack.length - 1; j >= 0; --j)
-			Con.Print(s.filename + '/' + 'Quake1Game' + j + '.pak (' + s.pack[j].length + ' files)\n');
+			Con.Print(s.filename + 'Quake1Game' + j + '.pak (' + s.pack[j].length + ' files)\n');
 		Con.Print(s.filename + '\n');
 	}
 };
@@ -253,12 +253,12 @@ COM.LoadFile = function(filename)
 					Draw.EndDisc();
 					return new ArrayBuffer(0);
 				}
-				xhr.open('GET', search.filename + '/Quake1Game' + j + '.pak', false);
+				xhr.open('GET', search.filename + 'Quake1Game' + j + '.pak', false);
 				xhr.setRequestHeader('Range', 'bytes=' + file.filepos + '-' + (file.filepos + file.filelen - 1));
 				xhr.send();
 				if ((xhr.status >= 200) && (xhr.status <= 299) && (xhr.responseText.length === file.filelen))
 				{
-					Sys.Print('PackFile: ' + search.filename + '/Quake1Game' + j + '.pak : ' + filename + '\n')
+					Sys.Print('PackFile: ' + search.filename + 'Quake1Game' + j + '.pak : ' + filename + '\n')
 					Draw.EndDisc();
 					return Q.strmem(xhr.responseText);
 				}
@@ -343,7 +343,7 @@ COM.AddGameDirectory = function(dir)
 	var pak, i = 0;
 	for (;;)
 	{
-		pak = COM.LoadPackFile(dir + '/' + 'Quake1Game' + i + '.pak');
+		pak = COM.LoadPackFile(dir + 'Quake1Game' + i + '.pak');
 		if (pak == null)
 			break;
 		search.pack[search.pack.length] = pak;
