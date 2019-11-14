@@ -178,7 +178,10 @@
 					{
 					var name = COM.DefaultExtension("s0", ".sav");
 					var rawReading = COM.LoadTextFile(name);
-					saveString(rawReading,"s0.sav")
+					if (rawReading.length>100)
+						{
+						saveString(rawReading,"s0.sav")
+						}
 					}
 					catch(err)
 					{
