@@ -312,6 +312,17 @@ Host.Init = function()
 	Cmd.text = 'exec quake.rc\n' + Cmd.text;
 	Host.initialized = true;
 	Sys.Print('========Quake Initialized=========\n');
+	try
+		{
+		if (parent.saveGameToUpload!=null)
+			{
+			var name = COM.DefaultExtension("s0", ".sav");
+			COM.WriteTextFile(name, parent.saveGameToUpload);
+			}
+		}
+		catch(err)
+		{
+		}
 };
 
 Host.Shutdown = function()
