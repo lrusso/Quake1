@@ -1,4 +1,4 @@
-# Quake I JS - JavaScript porting
+# Quake JS - JavaScript porting
 
 ![alt screenshot](https://raw.githubusercontent.com/lrusso/Quake1/master/Quake1.png)
 
